@@ -8,3 +8,5 @@ ruff>=0.5
 bandit>=1.7
 # Optional: the official Google Gen AI SDK. Without it (or if Windows blocks it) AutoPatch calls the Gemini REST API itself.
 # google-genai>=1.0
+
+gunicorn>=22.0,<24
