@@ -1,0 +1,7 @@
+{% extends "workspace.html" %}
+{% block title %}Repository · AutoPatch{% endblock %}
+{% block crumbs %}<div><div class="crumb muted small" id="crumb"></div><h1 id="title">Repository</h1></div><div class="chips"><a class="btn primary" id="scan-btn" href="/app/scan">Scan this repository</a><a class="btn" href="/app/repositories">All repositories</a></div>{% endblock %}
+{% block content %}
+<div id="root" data-project-id="{{ project_id }}"><div class="skel"></div></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/patches.js') }}"></script><script src="{{ url_for('static', filename='js/repository.js') }}"></script>{% endblock %}

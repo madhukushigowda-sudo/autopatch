@@ -1,0 +1,271 @@
+# Baseline test ids (stage 0). Format: <junit id> <TAB> <required outcome>.
+# 'passed' = must pass. 'passed-or-skipped' = may skip on some machines (Bandit missing, POSIX-only tests on Windows).
+# New tests may be added freely. scripts/check.py groups ids by test function (text before '['): a function may not
+# disappear, lose parametrized cases, fail, or be skipped unless marked passed-or-skipped.
+tests.test_api::test_failed_upload_leaves_no_files	passed
+tests.test_api::test_file_endpoint_cannot_escape_project	passed
+tests.test_api::test_health	passed
+tests.test_api::test_index_page_renders	passed
+tests.test_api::test_mixed_zip_and_py_rejected	passed
+tests.test_api::test_original_upload_content_is_unchanged_byte_for_byte	passed
+tests.test_api::test_package_root_zip_keeps_imports_resolvable	passed
+tests.test_api::test_rejections_return_clean_json_errors	passed
+tests.test_api::test_request_size_limit	passed
+tests.test_api::test_upload_single_py_files	passed
+tests.test_api::test_upload_zip_end_to_end	passed
+tests.test_api::test_uploaded_code_is_never_executed	passed
+tests.test_api_analysis::test_deleting_a_project_removes_its_runs_and_findings	passed
+tests.test_api_analysis::test_execution_can_be_disabled	passed
+tests.test_api_analysis::test_execution_guard_blocks_remote_cross_site_and_foreign_host[kwargs0-403]	passed
+tests.test_api_analysis::test_execution_guard_blocks_remote_cross_site_and_foreign_host[kwargs1-403]	passed
+tests.test_api_analysis::test_execution_guard_blocks_remote_cross_site_and_foreign_host[kwargs2-403]	passed
+tests.test_api_analysis::test_finding_filters	passed
+tests.test_api_analysis::test_interrupted_runs_are_marked_failed_on_startup	passed
+tests.test_api_analysis::test_malicious_zips_never_execute_or_create_runs	passed
+tests.test_api_analysis::test_no_endpoint_accepts_code_for_direct_execution	passed
+tests.test_api_analysis::test_non_json_start_is_rejected	passed
+tests.test_api_analysis::test_only_one_analysis_at_a_time	passed
+tests.test_api_analysis::test_overview_counts_only_latest_run_per_project	passed
+tests.test_api_analysis::test_overview_is_empty_then_reflects_stored_results_only	passed
+tests.test_api_analysis::test_run_documents_never_contain_secrets	passed
+tests.test_api_analysis::test_start_poll_and_read_results	passed
+tests.test_api_analysis::test_unknown_ids_are_404	passed
+tests.test_entrypoints::test_classification_rules	passed
+tests.test_entrypoints::test_frames_outside_the_project_have_no_relative_path	passed
+tests.test_entrypoints::test_no_traceback_returns_none	passed
+tests.test_entrypoints::test_parse_traceback_extracts_frames_type_and_relative_paths	passed
+tests.test_entrypoints::test_parse_traceback_uses_the_last_exception_in_a_chain	passed
+tests.test_entrypoints::test_pick_entry_points_skips_tests_setup_and_unguarded_apps	passed
+tests.test_entrypoints::test_runs_ok_and_crashing_scripts	passed
+tests.test_entrypoints::test_script_waiting_for_input_or_arguments_is_not_a_crash	passed
+tests.test_entrypoints::test_src_layout_is_importable	passed
+tests.test_entrypoints::test_timeout_is_inconclusive_not_an_exception	passed
+tests.test_findings::test_all_static_builders_say_static_and_never_runtime	passed
+tests.test_findings::test_assertion_failure_is_honest_about_what_it_can_know	passed
+tests.test_findings::test_bandit_high_severity_and_confidence_is_critical_but_still_static	passed
+tests.test_findings::test_every_rule_in_the_knowledge_base_is_well_formed	passed
+tests.test_findings::test_finalize_orders_by_severity_assigns_unique_ids_and_cross_links	passed
+tests.test_findings::test_group_duplicates_merges_same_site_exceptions_only	passed
+tests.test_findings::test_new_finding_rejects_invalid_labels	passed
+tests.test_findings::test_rule_lookup_uses_longest_prefix_and_has_a_default	passed
+tests.test_findings::test_runtime_builders_say_runtime	passed
+tests.test_findings::test_snippet_cannot_read_outside_the_project	passed
+tests.test_findings::test_summarize_counts	passed
+tests.test_gemini_client::test_503_gives_up_after_the_configured_retries_and_timeouts_are_not_retried	passed
+tests.test_gemini_client::test_503_is_retried_then_succeeds	passed
+tests.test_gemini_client::test_504_retry_respects_the_attempt_limit_and_503_behaviour_is_unchanged	passed
+tests.test_gemini_client::test_attempt_logs_show_elapsed_time_but_no_key_or_prompt	passed
+tests.test_gemini_client::test_client_side_timeouts_are_never_retried_even_when_fast	passed
+tests.test_gemini_client::test_empty_or_blocked_response[   ]	passed
+tests.test_gemini_client::test_empty_or_blocked_response[None]	passed
+tests.test_gemini_client::test_empty_or_blocked_response[]	passed
+tests.test_gemini_client::test_explicit_thinking_level_is_passed_even_for_a_non_gemini3_model	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc0-invalid_key-502]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc1-invalid_key-502]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc2-quota-429]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc3-model-502]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc4-api-502]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc5-timeout-504]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc6-network-502]	passed
+tests.test_gemini_client::test_failures_are_mapped_and_never_leak_the_key[exc7-api-502]	passed
+tests.test_gemini_client::test_fast_504_is_retried_at_most_once	passed
+tests.test_gemini_client::test_fast_504_is_retried_once_then_succeeds	passed
+tests.test_gemini_client::test_gemini3_models_default_to_low_thinking_and_other_models_send_nothing	passed
+tests.test_gemini_client::test_missing_key_is_a_clear_error_and_no_sdk_call	passed
+tests.test_gemini_client::test_redact_and_classify_helpers	passed
+tests.test_gemini_client::test_sdk_missing	passed
+tests.test_gemini_client::test_slow_504_is_not_retried	passed
+tests.test_gemini_client::test_status_never_contains_the_key	passed
+tests.test_gemini_client::test_successful_call_uses_configured_model_and_json_mode	passed
+tests.test_gemini_client::test_timeout_default_is_long_enough_for_thinking_models	passed
+tests.test_indexer::test_deeply_nested_source_does_not_crash	passed
+tests.test_indexer::test_full_index	passed
+tests.test_indexer::test_indexer_does_not_execute_code	passed
+tests.test_indexer::test_module_names	passed
+tests.test_indexer::test_relative_imports_in_nested_packages	passed
+tests.test_indexer::test_src_layout_alias	passed
+tests.test_indexer::test_undecodable_and_null_byte_files_do_not_crash	passed
+tests.test_patch_diff::test_addition_only_hunk_without_context_is_refused	passed
+tests.test_patch_diff::test_appending_after_a_last_line_without_newline_adds_the_missing_terminator	passed
+tests.test_patch_diff::test_code_fences_and_git_preamble_are_accepted	passed
+tests.test_patch_diff::test_crlf_bom_and_missing_final_newline_are_preserved	passed
+tests.test_patch_diff::test_good_patch_applies_in_memory_and_yields_canonical_diff	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,1 @@\n+x = 1\n-creates or deletes]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ /dev/null\n@@ -1,1 +0,0 @@\n-x\n-creates or deletes]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/other.py\n@@ -1,1 +1,1 @@\n-x\n+y\n-renames]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/util.py\n-no hunks]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/util.py\n@@ -1,1 +1,1 @@\n def add(a, b):\n-no changes]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/util.py\n@@ -1,1 +1,1 @@\n?bad line\n-Malformed diff line]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/util.py\n@@ -1,3 +1,3 @@\n def add(a, b):\n-    return a - b\n+    return a + b\n \n--- a/util.py\n+++ b/util.py\n@@ -1,3 +1,3 @@\n def add(a, b):\n-    return a - b\n+    return a + b\n \n-more than once]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[--- a/util.py\n+++ b/util.py\n@@ nonsense @@\n x\n-Malformed hunk header]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[-did not include a diff]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[@@ -1,1 +1,1 @@\n-x\n+y\n-before any file header]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[Binary files a/x and b/x differ\n-creates, deletes, renames]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[deleted file mode 100644\n--- a/util.py\n+++ b/util.py\n@@ -1,3 +1,3 @@\n def add(a, b):\n-    return a - b\n+    return a + b\n \n-creates, deletes, renames]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[hello world-Unexpected text]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[new file mode 100644\n--- a/util.py\n+++ b/util.py\n@@ -1,3 +1,3 @@\n def add(a, b):\n-    return a - b\n+    return a + b\n \n-creates, deletes, renames]	passed
+tests.test_patch_diff::test_malformed_or_forbidden_diffs_are_rejected[rename from a.py\nrename to b.py\n-creates, deletes, renames]	passed
+tests.test_patch_diff::test_mixed_line_endings_are_patched_and_untouched_lines_keep_theirs	passed
+tests.test_patch_diff::test_multi_hunk_and_multi_file_patch	passed
+tests.test_patch_diff::test_parse_exposes_structure	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[../evil.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[..\\x.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[/etc/passwd]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[C:/x.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[a/../../evil.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[a/b/../../../x.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[sub\\x.py]	passed
+tests.test_patch_diff::test_path_traversal_and_unsafe_paths_are_rejected[~/x.py]	passed
+tests.test_patch_diff::test_pure_crlf_file_with_crlf_diff_and_multiple_hunks	passed
+tests.test_patch_diff::test_result_must_be_valid_python	passed
+tests.test_patch_diff::test_size_limits	passed
+tests.test_patch_diff::test_undecodable_and_stray_cr_files_are_refused	passed
+tests.test_patch_diff::test_unrelated_test_nonpython_and_missing_files_are_rejected	passed
+tests.test_patch_diff::test_wrong_header_counts_are_corrected_with_a_warning	passed
+tests.test_patch_diff::test_wrong_line_numbers_are_tolerated_but_context_must_match	passed
+tests.test_patch_prompt::test_fenced_and_chatty_json_is_accepted	passed
+tests.test_patch_prompt::test_injection_text_stays_inside_the_fenced_block	passed
+tests.test_patch_prompt::test_instruction_is_added_as_its_own_section_before_the_code	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected["just a string"-not a JSON object]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[-empty]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[[1, 2]-not valid JSON|not a JSON object]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[not json at all-not valid JSON]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"explanation": "", "why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "diff": "--- a/util.py\\n+++ b/util.py\\n@@ -1 +1 @@\\n-x\\n+y\\n", "side_effects": ["none"], "suggested_tests": ["add(2, 2) == 4"], "risk": "Low", "confidence": "HIGH"}-explanation]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"explanation": "Use addition.", "why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "diff": "", "side_effects": ["none"], "suggested_tests": ["add(2, 2) == 4"], "risk": "Low", "confidence": "HIGH"}-did not propose a change]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"explanation": "Use addition.", "why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "diff": "--- a/util.py\\n+++ b/util.py\\n@@ -1 +1 @@\\n-x\\n+y\\n", "side_effects": ["none"], "suggested_tests": {"a": 1}, "risk": "Low", "confidence": "HIGH"}-wrong type]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"explanation": "Use addition.", "why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "diff": "--- a/util.py\\n+++ b/util.py\\n@@ -1 +1 @@\\n-x\\n+y\\n", "side_effects": [1, 2], "suggested_tests": ["add(2, 2) == 4"], "risk": "Low", "confidence": "HIGH"}-wrong type]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"explanation": "Use addition.", "why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "side_effects": ["none"], "suggested_tests": ["add(2, 2) == 4"], "risk": "Low", "confidence": "HIGH"}-did not propose a change]	passed
+tests.test_patch_prompt::test_invalid_responses_are_rejected[{"why_it_fixes": "a - b was wrong.", "affected_files": ["util.py"], "diff": "--- a/util.py\\n+++ b/util.py\\n@@ -1 +1 @@\\n-x\\n+y\\n", "side_effects": ["none"], "suggested_tests": ["add(2, 2) == 4"], "risk": "Low", "confidence": "HIGH"}-explanation]	passed
+tests.test_patch_prompt::test_no_editable_file_is_an_error	passed
+tests.test_patch_prompt::test_prompt_contains_finding_code_tests_and_structure	passed
+tests.test_patch_prompt::test_prompt_without_instruction_is_unchanged	passed
+tests.test_patch_prompt::test_sanitizer_cleans_input	passed
+tests.test_patch_prompt::test_sanitizer_limit_is_500_characters_and_rejects_instead_of_truncating	passed
+tests.test_patch_prompt::test_unknown_levels_fall_back_and_lengths_are_capped	passed
+tests.test_patch_prompt::test_upload_helper_still_works	passed
+tests.test_patch_prompt::test_valid_response_is_normalised	passed
+tests.test_patches::test_a_second_candidate_for_the_same_code_is_stale_after_the_first_is_applied	passed
+tests.test_patches::test_accept_applies_to_the_working_copy_only_and_verifies	passed
+tests.test_patches::test_accept_is_blocked_when_tests_may_not_run_or_analysis_is_active	passed
+tests.test_patches::test_accept_verify_and_rollback_are_unchanged_with_an_instruction	passed
+tests.test_patches::test_ai_status_never_exposes_the_key	passed
+tests.test_patches::test_bad_instructions_are_rejected_before_any_gemini_call	passed
+tests.test_patches::test_crash_during_apply_is_recovered_from_the_snapshot	passed
+tests.test_patches::test_crlf_project_files_get_valid_patches_end_to_end	passed
+tests.test_patches::test_default_client_without_a_key_reports_how_to_fix_it	passed
+tests.test_patches::test_deleting_a_project_removes_its_patches_and_working_files	passed
+tests.test_patches::test_failed_working_copy_creation_leaves_nothing_behind	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[blocked-502]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[invalid_key-502]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[model-502]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[network-502]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[not_configured-503]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[quota-429]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[sdk_missing-503]	passed
+tests.test_patches::test_gemini_failures_become_clear_api_errors_and_leave_no_patch[timeout-504]	passed
+tests.test_patches::test_generate_builds_a_reviewable_proposal_without_applying_it	passed
+tests.test_patches::test_generate_requires_confirmation_and_local_json_requests	passed
+tests.test_patches::test_history_survives_a_restart	passed
+tests.test_patches::test_instruction_cannot_unlock_test_edits_or_new_files	passed
+tests.test_patches::test_instruction_reaches_the_prompt_and_is_stored	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,1 @@\n+x = 1\n-creates or deletes]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- a/../../evil.py\n+++ b/../../evil.py\n@@ -1,1 +1,1 @@\n-x\n+y\n-Unsafe path]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- a/other.py\n+++ b/other.py\n@@ -1,1 +1,1 @@\n-x\n+y\n-unrelated]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- a/test_util.py\n+++ b/test_util.py\n@@ -1,1 +1,1 @@\n-from util import add\n+import os\n-test file]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- a/util.py\n+++ b/util.py\n@@ -1,2 +1,2 @@\n def add(a, b):\n-    return a - b\n+    return a +\n-syntax error]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[--- a/util.py\n+++ b/util.py\n@@ -1,2 +1,2 @@\n def add(x, y):\n-    return x - y\n+    return x + y\n-context does not match]	passed
+tests.test_patches::test_invalid_proposals_are_rejected_recorded_and_never_applied[this is not a diff-Unexpected text]	passed
+tests.test_patches::test_malformed_ai_responses_are_422_and_recorded[[]]	passed
+tests.test_patches::test_malformed_ai_responses_are_422_and_recorded[]	passed
+tests.test_patches::test_malformed_ai_responses_are_422_and_recorded[not json]	passed
+tests.test_patches::test_malformed_ai_responses_are_422_and_recorded[{"diff": "--- a/util.py\\n+++ b/util.py\\n@@ -1,2 +1,2 @@\\n def add(a, b):\\n-    return a - b\\n+    return a + b\\n"}]	passed
+tests.test_patches::test_malformed_ai_responses_are_422_and_recorded[{"explanation": "x"}]	passed
+tests.test_patches::test_missing_empty_or_blank_instruction_behaves_as_before	passed
+tests.test_patches::test_multiple_candidates_keep_their_history	passed
+tests.test_patches::test_patches_created_before_this_feature_still_load	passed
+tests.test_patches::test_project_without_tests_is_unverified	passed
+tests.test_patches::test_regression_is_detected_preserved_and_reverted_exactly	passed
+tests.test_patches::test_reject_records_the_decision_and_changes_nothing	passed
+tests.test_patches::test_rejected_proposals_record_file_diagnostics	passed
+tests.test_patches::test_rollback_must_go_in_reverse_order	passed
+tests.test_patches::test_rollback_refuses_to_overwrite_later_manual_edits	passed
+tests.test_patches::test_rollback_restores_the_exact_pre_patch_state	passed
+tests.test_patches::test_rollback_without_snapshot_is_refused	passed
+tests.test_patches::test_scanning_never_calls_gemini	passed
+tests.test_patches::test_stage3_does_not_break_original_integrity_checks	passed
+tests.test_patches::test_static_finding_without_a_covering_test_is_called_insufficiently_verified	passed
+tests.test_patches::test_the_api_key_never_appears_in_any_response	passed
+tests.test_patches::test_unknown_patch_ids_and_actions	passed
+tests.test_pipeline::test_entry_point_crash_is_captured	passed
+tests.test_pipeline::test_entry_points_needing_input_or_arguments_are_not_bugs	passed
+tests.test_pipeline::test_entrypoints_can_be_disabled	passed
+tests.test_pipeline::test_failing_test_is_a_runtime_finding_with_evidence	passed
+tests.test_pipeline::test_hanging_entry_point_times_out	passed
+tests.test_pipeline::test_hanging_test_times_out_and_is_reported	passed
+tests.test_pipeline::test_imported_syntax_error_also_fails_collection_at_runtime	passed
+tests.test_pipeline::test_missing_original_files_fail_the_run_cleanly	passed
+tests.test_pipeline::test_missing_package_is_an_environment_finding	passed
+tests.test_pipeline::test_missing_test_files	passed
+tests.test_pipeline::test_originals_are_unchanged_when_tests_write_files	passed
+tests.test_pipeline::test_passing_tests_give_a_clean_baseline	passed
+tests.test_pipeline::test_runtime_exception_is_grouped_across_tests	passed
+tests.test_pipeline::test_runtime_findings_come_from_execution_only	passed
+tests.test_pipeline::test_secrets_are_not_visible_to_project_code	passed
+tests.test_pipeline::test_static_findings_are_never_labelled_runtime	passed
+tests.test_pipeline::test_syntax_error_is_static_and_does_not_stop_the_run	passed
+tests.test_pipeline::test_tampering_with_the_original_is_detected	passed
+tests.test_pipeline::test_workspace_is_removed_and_run_is_stored	passed
+tests.test_sandbox::test_background_children_are_cleaned_up_after_normal_exit	passed-or-skipped
+tests.test_sandbox::test_captures_stdout_stderr_and_exit_code	passed
+tests.test_sandbox::test_home_and_temp_point_into_the_scratch_folder	passed
+tests.test_sandbox::test_missing_executable_returns_an_error_instead_of_raising	passed
+tests.test_sandbox::test_output_flood_is_capped_without_blocking	passed
+tests.test_sandbox::test_server_secrets_are_not_passed_to_children	passed
+tests.test_sandbox::test_stdin_is_closed	passed
+tests.test_sandbox::test_timeout_kills_the_whole_process_tree	passed-or-skipped
+tests.test_sandbox::test_timeout_terminates_the_process_quickly	passed
+tests.test_static_tools::test_ast_patterns_find_the_documented_cases	passed
+tests.test_static_tools::test_ast_patterns_have_no_false_positives_on_clean_code	passed
+tests.test_static_tools::test_ast_patterns_skip_unparsable_files	passed
+tests.test_static_tools::test_bandit_nonzero_exit_other_than_1_is_an_error	passed
+tests.test_static_tools::test_bandit_runs_for_real	passed-or-skipped
+tests.test_static_tools::test_bandit_unavailable_is_reported_not_raised	passed
+tests.test_static_tools::test_bandit_wiring_with_a_stand_in_executable	passed
+tests.test_static_tools::test_parse_bandit_json	passed
+tests.test_static_tools::test_parse_ruff_json_rejects_garbage	passed
+tests.test_static_tools::test_parse_ruff_json_relativises_paths_and_drops_files_outside_the_project	passed
+tests.test_static_tools::test_ruff_ignores_the_projects_own_config	passed
+tests.test_static_tools::test_ruff_runs_for_real_and_finds_bugs	passed
+tests.test_static_tools::test_ruff_unavailable_is_reported_not_raised	passed
+tests.test_store::test_concurrent_inserts_are_all_kept	passed
+tests.test_store::test_corrupt_file_is_preserved_not_overwritten	passed
+tests.test_store::test_crud_and_persistence	passed
+tests.test_store::test_factory_falls_back_when_mongo_unusable	passed
+tests.test_store::test_factory_falls_back_without_uri	passed
+tests.test_store::test_factory_local_is_intentional	passed
+tests.test_store::test_factory_rejects_bad_mode	passed
+tests.test_store::test_invalid_collection_name_rejected	passed
+tests.test_store::test_returned_documents_are_copies	passed
+tests.test_workspace::test_ignored_dirs_are_dropped	passed
+tests.test_workspace::test_keeps_top_folder_when_it_is_a_package	passed
+tests.test_workspace::test_oversized_file_is_skipped_not_extracted	passed
+tests.test_workspace::test_rejects_case_collision_and_duplicates	passed
+tests.test_workspace::test_rejects_encrypted_flag	passed
+tests.test_workspace::test_rejects_not_a_zip	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[../evil.py]	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[..\\evil.py]	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[/abs/evil.py]	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[C:/evil.py]	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[a/../../evil.py]	passed
+tests.test_workspace::test_rejects_path_traversal_and_absolute[a\\..\\..\\evil.py]	passed
+tests.test_workspace::test_rejects_symlink	passed
+tests.test_workspace::test_rejects_windows_unsafe_names[bad:name.py]	passed
+tests.test_workspace::test_rejects_windows_unsafe_names[con.py]	passed
+tests.test_workspace::test_rejects_windows_unsafe_names[dir/NUL.txt]	passed
+tests.test_workspace::test_rejects_windows_unsafe_names[trailing.]	passed
+tests.test_workspace::test_rejects_windows_unsafe_names[what?.py]	passed
+tests.test_workspace::test_requires_python_files	passed
+tests.test_workspace::test_strips_wrapper_folder_that_is_not_a_package	passed
+tests.test_workspace::test_too_many_files	passed
+tests.test_workspace::test_total_size_limit_blocks_zip_bomb	passed
+tests.test_workspace::test_write_python_files_checks	passed

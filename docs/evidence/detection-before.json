@@ -1,0 +1,73 @@
+{
+ "good_files": 14,
+ "buggy_files": 20,
+ "planted_bugs": 21,
+ "bugs_found": 17,
+ "recall": 0.81,
+ "all_findings": {
+  "findings": 23,
+  "true_positive": 18,
+  "false_positive": 5,
+  "precision": 0.783
+ },
+ "medium_or_higher": {
+  "findings": 17,
+  "true_positive": 14,
+  "false_positive": 3,
+  "precision": 0.824
+ },
+ "false_positives_in_good": 3,
+ "missed": [
+  "buggy/return_in_finally.py:5",
+  "buggy/sort_assigned.py:2",
+  "buggy/str_discarded.py:2",
+  "buggy/str_discarded.py:3"
+ ],
+ "false_positive_detail": [
+  {
+   "file": "good/cache.py",
+   "line": 19,
+   "rule": "AP001",
+   "severity": "Medium",
+   "confidence": "Low",
+   "title": "Exception silently swallowed",
+   "tp": false
+  },
+  {
+   "file": "good/config_loader.py",
+   "line": 21,
+   "rule": "AP001",
+   "severity": "Medium",
+   "confidence": "Low",
+   "title": "Exception silently swallowed",
+   "tp": false
+  },
+  {
+   "file": "good/files.py",
+   "line": 17,
+   "rule": "AP001",
+   "severity": "Medium",
+   "confidence": "Low",
+   "title": "Exception silently swallowed",
+   "tp": false
+  },
+  {
+   "file": "buggy/unbound_local.py",
+   "line": 5,
+   "rule": "F841",
+   "severity": "Low",
+   "confidence": "Low",
+   "title": "Unused local variable",
+   "tp": false
+  },
+  {
+   "file": "buggy/unreachable.py",
+   "line": 1,
+   "rule": "RET503",
+   "severity": "Low",
+   "confidence": "Low",
+   "title": "Function may implicitly return None",
+   "tp": false
+  }
+ ]
+}

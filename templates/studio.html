@@ -1,0 +1,9 @@
+{% extends "workspace.html" %}
+{% block title %}AI Repair Studio · AutoPatch{% endblock %}
+{% block crumbs %}<h1>AI Repair Studio</h1>{% endblock %}
+{% block content %}
+<div class="note" id="ai-note">Checking the AI repair service…</div>
+<section class="card"><h2>Choose a bug to repair</h2><div id="bugs"><div class="skel"></div></div></section>
+<section class="card"><h2>Recent repair proposals</h2><div id="recent"><div class="skel"></div></div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/studio.js') }}"></script>{% endblock %}

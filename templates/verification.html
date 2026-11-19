@@ -1,0 +1,10 @@
+{% extends "workspace.html" %}
+{% block title %}Verification Center · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Verification Center</h1>{% endblock %}
+{% block content %}
+<p class="note">A repair is described as verified only against the tests that exist in the repository, and only when those tests ran. No test coverage means no verification, and the result says so.</p>
+<div class="tiles" id="tiles"></div>
+<section class="card"><h2>Repair verification</h2><div id="patches"><div class="skel"></div></div></section>
+<section class="card"><h2>Scan history and test results</h2><div id="runs"><div class="skel"></div></div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/verification.js') }}"></script>{% endblock %}

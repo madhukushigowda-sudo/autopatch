@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060A13">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%232563EB%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2718%27 font-family=%27Arial%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EA%3C/text%3E%3C/svg%3E">
+  <title>{% block title %}AutoPatch{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ap.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+{% block body %}{% endblock %}
+<script src="{{ url_for('static', filename='js/shell.js') }}"></script>
+</body>
+</html>

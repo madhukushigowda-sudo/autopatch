@@ -1,0 +1,18 @@
+{% extends "workspace.html" %}
+{% block title %}Scan Center · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Scan Center</h1>{% endblock %}
+{% block content %}
+<section class="card glow"><h2>Start a scan</h2>
+  <div class="filters">
+    <label class="small muted" for="repo-select">Repository</label>
+    <select id="repo-select" style="min-width:260px"></select>
+    <label class="small"><input type="checkbox" id="opt-entry" checked> Also run detected entry points once (no arguments, no input)</label>
+    <button class="btn primary" id="start" type="button">Start scan</button>
+  </div>
+  <p class="small muted" style="margin:0">Runs the repository's own pytest tests in a temporary copy, plus Ruff, Bandit and AST checks. Your original files are never modified. Restricted local execution with time limits, <strong>not a hardened sandbox</strong>.</p>
+  <div id="start-msg" class="alert bad hidden" role="alert"></div>
+</section>
+<section class="card" id="run-card"><h2 id="run-title">Pipeline</h2><div id="run-box"><div class="empty"><div class="big">No scan selected</div>Start a scan to watch each stage run, or open one from a repository's scan history.</div></div></section>
+<div id="results"></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/scan.js') }}"></script>{% endblock %}

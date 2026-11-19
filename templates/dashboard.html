@@ -1,0 +1,14 @@
+{% extends "workspace.html" %}
+{% block title %}Dashboard · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Dashboard</h1><a class="btn primary" href="/app/repositories">Upload a repository</a>{% endblock %}
+{% block content %}
+<p class="note" id="basis">Loading…</p>
+<div class="tiles" id="tiles"></div>
+<div class="grid2">
+  <section class="card"><h2>Project health score</h2><div id="health"></div></section>
+  <section class="card"><h2>Bugs by severity</h2><div id="sev"></div><h2 style="margin-top:1.2rem">Evidence</h2><div id="conf"></div>
+    <p class="muted small">Severity is not confidence. Runtime-confirmed findings were observed while code ran; static findings come from reading code.</p></section>
+</div>
+<section class="card"><h2>Recent activity</h2><div id="activity"></div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>{% endblock %}

@@ -1,0 +1,180 @@
+{
+ "497323b7d96e4bb0b0bd13cdf6064aa8": {
+  "_id": "497323b7d96e4bb0b0bd13cdf6064aa8",
+  "class_count": 0,
+  "created_at": "2026-11-19T10:50:45+00:00",
+  "file_count": 2,
+  "function_count": 3,
+  "kind": "zip",
+  "last_run": {
+   "findings": {
+    "by_category": {
+     "test_failure": 1
+    },
+    "by_confirmation": {
+     "runtime": 1,
+     "static": 0
+    },
+    "by_severity": {
+     "Critical": 0,
+     "High": 1,
+     "Low": 0,
+     "Medium": 0
+    },
+    "total": 1
+   },
+   "finished_at": "2026-11-19T10:50:45+00:00",
+   "id": "f510144ff61040c8b8d37c201749834b",
+   "pytest": {
+    "collected": 2,
+    "collection_errors": 0,
+    "errors": 0,
+    "failed": 1,
+    "incomplete": 0,
+    "passed": 1,
+    "skipped": 0,
+    "total": 2,
+    "xfailed": 0,
+    "xpassed": 0
+   },
+   "status": "completed"
+  },
+  "loc": 7,
+  "map": {
+   "all_files": [
+    "test_util.py",
+    "util.py"
+   ],
+   "config_files": [],
+   "declared_requirements": [],
+   "entry_points": [],
+   "files": [
+    {
+     "classes": [],
+     "error": null,
+     "functions": [
+      {
+       "args": [],
+       "end_lineno": 4,
+       "has_docstring": false,
+       "is_async": false,
+       "is_method": false,
+       "lineno": 3,
+       "name": "test_add",
+       "qualname": "test_add"
+      },
+      {
+       "args": [],
+       "end_lineno": 7,
+       "has_docstring": false,
+       "is_async": false,
+       "is_method": false,
+       "lineno": 6,
+       "name": "test_other",
+       "qualname": "test_other"
+      }
+     ],
+     "has_main": false,
+     "imports": [
+      {
+       "kind": "internal",
+       "line": 1,
+       "module": "util",
+       "target": "util"
+      }
+     ],
+     "is_test": true,
+     "loc": 5,
+     "module": "test_util",
+     "path": "test_util.py"
+    },
+    {
+     "classes": [],
+     "error": null,
+     "functions": [
+      {
+       "args": [
+        "a",
+        "b"
+       ],
+       "end_lineno": 2,
+       "has_docstring": false,
+       "is_async": false,
+       "is_method": false,
+       "lineno": 1,
+       "name": "add",
+       "qualname": "add"
+      }
+     ],
+     "has_main": false,
+     "imports": [],
+     "is_test": false,
+     "loc": 2,
+     "module": "util",
+     "path": "util.py"
+    }
+   ],
+   "graph": {
+    "cycles": [],
+    "edges": [
+     {
+      "source": "test_util",
+      "target": "util"
+     }
+    ],
+    "most_imported": [
+     {
+      "imported_by": 1,
+      "module": "util"
+     }
+    ],
+    "nodes": [
+     {
+      "id": "test_util",
+      "imported_by": 0,
+      "imports": 1,
+      "path": "test_util.py"
+     },
+     {
+      "id": "util",
+      "imported_by": 1,
+      "imports": 0,
+      "path": "util.py"
+     }
+    ]
+   },
+   "syntax_errors": [],
+   "tests": {
+    "files": [
+     "test_util.py"
+    ],
+    "has_conftest": false,
+    "ids": [
+     "test_util.py::test_add",
+     "test_util.py::test_other"
+    ],
+    "static_test_count": 2
+   },
+   "third_party": [],
+   "totals": {
+    "all_files": 2,
+    "classes": 0,
+    "functions": 3,
+    "loc": 7,
+    "python_files": 2
+   },
+   "unresolved_imports": []
+  },
+  "name": "proj",
+  "python_file_count": 2,
+  "skipped": [],
+  "skipped_total": 0,
+  "source_sha256": "9c673d7bcf08980e55dfc8bca843dd8a6bc41081c8c0f349c0f8063c79a884e4",
+  "static_test_count": 2,
+  "status": "indexed",
+  "stripped_root": null,
+  "syntax_error_count": 0,
+  "test_file_count": 1,
+  "warnings": []
+ }
+}

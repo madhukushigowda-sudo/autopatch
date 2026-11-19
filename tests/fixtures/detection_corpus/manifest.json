@@ -1,0 +1,1 @@
+{"note": "good/ files are idiomatic code with no known bugs. buggy/ lines marked '# <<BUG>>' are the ground truth (one planted defect per marker)."}

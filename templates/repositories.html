@@ -1,0 +1,22 @@
+{% extends "workspace.html" %}
+{% block title %}Repositories · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Repositories</h1>{% endblock %}
+{% block content %}
+<div class="note"><strong>Python projects only (prototype).</strong> Uploading only reads and indexes your code; nothing runs at upload. A scan runs the project's tests and entry points in a temporary copy on this computer, with time limits.
+  That is restricted local execution, <strong>not a hardened sandbox</strong>, so only scan code you are willing to run locally.</div>
+<section class="card"><h2>Upload a repository</h2>
+  <form id="upload-form" novalidate>
+    <div class="drop" id="drop">
+      <div class="big">Drop a .zip project here</div>
+      <div class="muted small">or one or more .py files · <span id="limits-text"></span></div>
+      <div class="pick"><input type="file" id="file-input" accept=".zip,.py" multiple aria-label="Choose a ZIP or Python files"></div>
+      <div id="picked" class="muted small" style="margin-top:.6rem"></div>
+      <div style="margin-top:.9rem"><button class="btn primary" type="submit" id="upload-btn">Upload and index</button></div>
+    </div>
+  </form>
+  <div id="upload-error" class="alert bad hidden" role="alert"></div>
+  <p class="muted small" style="margin-bottom:0">Importing from GitHub is not available yet. Download the repository as a ZIP and upload it here.</p>
+</section>
+<section class="card"><h2>Your repositories</h2><div id="list"><div class="skel"></div><div class="skel" style="width:70%"></div></div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/repositories.js') }}"></script>{% endblock %}

@@ -1,0 +1,8 @@
+{
+ "autopatch/api/patches.py": "7bcdd73c743ddaa0f86722286fb198ed87932f40fd680e74f3238cd116a65e0d",
+ "autopatch/core/gemini_client.py": "5dfca7a9cf36c37a3001515932263f658e55b707f4f4773019ede8473cfc5ed2",
+ "autopatch/core/patch_diff.py": "ff272d9d48eadf9003e2f9b354cacd3f7efe834f1ff75145064c43c1aa1f9188",
+ "autopatch/core/patch_prompt.py": "0f3b96e916a203bd28b80e3ec7cb780db598000609747acee75af7410f493dd1",
+ "autopatch/core/patches.py": "4d5b15b15e4f1d092d567dd0c27386782166e09000843986b387c25789693971",
+ "static/js/patches.js": "cf86a9d4c82ea5b24b164ca7bf6dfe2f2eb0c416bf908d0c5a761d8eeb3bbf7f"
+}

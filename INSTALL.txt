@@ -1,0 +1,20 @@
+AutoPatch - development copy, stage 0
+=====================================
+
+This is a SAFE DEVELOPMENT COPY. It is not your working project.
+
+1. Extract the ZIP into a NEW, EMPTY folder, for example  C:\AutoPatchDev\stage0
+   Never extract over your existing project or over a previous stage folder.
+2. Open a terminal in the extracted autopatch-dev folder and run ONE command:
+
+       py -3.13 scripts\check.py
+
+   It verifies every file against CHECKSUMS.txt, scans for leaked secrets, runs Ruff,
+   and runs the full test suite in a clean environment with a temporary data folder.
+   It never reads your .env or your real data and never connects to MongoDB.
+3. The last line says RESULT: PASS or RESULT: FAIL. Send me the full output if it fails.
+
+Optional: pip install -r requirements.txt  (only if the tests report missing packages).
+Do not copy your .env into this folder: the check refuses to run if one is present.
+
+Rollback: delete this folder. Nothing else was changed.

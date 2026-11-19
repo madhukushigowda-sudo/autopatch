@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block title %}AutoPatch · Detect. Repair. Verify.{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">{% endblock %}
+{% block body_class %}landing{% endblock %}
+{% block body %}
+<script>document.documentElement.classList.add("js");</script>
+
+<!-- Patchy, the AutoPatch mascot (original artwork) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="patchy" viewBox="0 0 120 124">
+    <line x1="60" y1="14" x2="60" y2="30" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+    <circle class="ant" cx="60" cy="11" r="5" fill="#16A34A"/>
+    <rect x="12" y="52" width="10" height="22" rx="5" fill="#CBD5E1"/><rect x="98" y="52" width="10" height="22" rx="5" fill="#CBD5E1"/>
+    <rect x="22" y="28" width="76" height="64" rx="22" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+    <rect x="31" y="42" width="58" height="36" rx="13" fill="#101828"/>
+    <g class="eyes"><rect class="eye" x="42" y="52" width="12" height="14" rx="6" fill="#60A5FA"/><rect class="eye" x="66" y="52" width="12" height="14" rx="6" fill="#60A5FA"/></g>
+    <path d="M52 71 Q60 76 68 71" stroke="#60A5FA" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <g transform="rotate(18 82 33)"><rect x="68" y="27" width="28" height="12" rx="4" fill="#F59E0B"/><rect x="77" y="27" width="10" height="12" fill="#FCD34D"/><circle cx="72" cy="33" r="1.3" fill="#B45309"/><circle cx="92" cy="33" r="1.3" fill="#B45309"/></g>
+    <rect x="38" y="95" width="44" height="24" rx="9" fill="#2563EB"/><rect x="52" y="102" width="16" height="10" rx="3" fill="#BFDBFE"/><rect x="56" y="105" width="8" height="4" rx="1" fill="#2563EB"/>
+  </symbol>
+</svg>
+
+<header class="lnav" id="lnav">
+  <a class="brand" href="/"><span class="logo">A</span>AutoPatch</a>
+  <a class="l" href="#features">Features</a><a class="l" href="#story">Workflow</a><a class="l" href="#why">Why AutoPatch</a>
+  <a class="btn primary" href="/app">Get Started</a>
+</header>
+
+<main>
+<section class="lhero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Autonomous software bug detection and repair</span>
+      <h1><span class="w1">Detect.</span> <span class="w2">Repair.</span> <span class="w3">Verify.</span></h1>
+      <p class="sub">AutoPatch scans your code, explains every bug with evidence, proposes an AI-assisted fix, and checks it against your own tests before you approve anything.</p>
+      <div class="cta-row"><a class="btn primary big" href="/app">Get Started &rarr;</a><a class="btn big" href="#features">Explore Features</a></div>
+      <p class="hero-note">Python projects &middot; runs on your own computer &middot; nothing is applied without your approval.</p>
+    </div>
+    <div class="scene" id="scene" data-s="0" aria-label="Animated illustration of AutoPatch detecting and fixing a bug">
+      <div class="orbit o1"></div><div class="orbit o2"></div>
+      <div class="win">
+        <div class="wbar"><i></i><i></i><i></i><span>calc.py</span></div>
+        <div style="position:relative"><div class="scan"></div>
+<pre><div class="cl"><b>1</b><span><span class="k">def</span> <span class="f">average</span>(values):</span></div><div class="cl"><b>2</b><span>    total = <span class="f">sum</span>(values)</span></div><div class="cl bug"><b>3</b><span>    <span class="k">return</span> total / <span class="f">len</span>(values)</span></div><div class="cl"><b>4</b><span></span></div><div class="cl"><b>5</b><span><span class="f">print</span>(average([]))</span></div></pre></div>
+        <div class="term">
+          <span class="out a">$ python calc.py</span>
+          <span class="out err">ZeroDivisionError: division by zero</span>
+          <span class="out err">  File "calc.py", line 3, in average</span>
+          <div class="hchips"><span class="hchip">Runtime-confirmed</span><span class="hchip b">Severity: High</span><span class="hchip g">Repair proposed</span><span class="hchip g">Tests re-run</span></div>
+        </div>
+      </div>
+      <div class="bubble m0">Reading your project…</div><div class="bubble m1">Running your tests safely…</div>
+      <div class="bubble m2">Found it. Line 3 raised the error.</div><div class="bubble m3">Fix drafted. Your approval comes next.</div>
+      <div class="botwrap"><span class="halo"></span><svg class="botbox bot" id="hero-bot" viewBox="0 0 120 124" role="img" aria-label="Patchy, the AutoPatch robot"><use href="#patchy"/></svg></div>
+      <p class="scene-cap">Illustration of the workflow, not a live run.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lstats">
+  <div class="wrap">
+    <p class="muted small" id="live-note">Live from this installation</p>
+    <div class="lstat-row" id="live"></div>
+  </div>
+</section>
+
+<section class="lsec" id="features">
+  <div class="wrap">
+    <span class="eyebrow rv">Features</span><h2 class="rv">Everything you need to go from bug to verified fix.</h2>
+    <p class="lead rv">Each feature below is part of this application and connected to real scan and repair data.</p>
+    <div class="fgrid">
+      <div class="fc rv"><div class="ic">&#11014;</div><h3>Repository upload</h3><p>Hardened ZIP handling rejects path traversal, symlinks and oversized archives. Your original upload is never modified.</p></div>
+      <div class="fc rv d1"><div class="ic">&#9678;</div><h3>Scan Center</h3><p>Runs your tests, Ruff, Bandit and entry points in a temporary copy with time limits, and shows each stage live.</p></div>
+      <div class="fc rv d2"><div class="ic">&#9888;</div><h3>Bug Intelligence</h3><p>Severity, confidence and evidence kept separate. Every bug has its file and line, traceback, root cause and a clear label: runtime-confirmed or static.</p></div>
+      <div class="fc rv"><div class="ic">&#9998;</div><h3>AI Repair Studio</h3><p>Gemini drafts a minimal fix with an explanation. You compare original and proposed code side by side, then approve or reject.</p></div>
+      <div class="fc rv d1"><div class="ic">&#10003;</div><h3>Verification Center</h3><p>Accepted patches are applied to a copy and your tests run before and after. Regressions are reverted automatically.</p></div>
+      <div class="fc rv d2"><div class="ic">&#9776;</div><h3>Reports</h3><p>A health summary, detection and repair statistics, and a Markdown export you can attach to a pull request.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lsec mid" id="story">
+  <div class="wrap">
+    <span class="eyebrow rv">The AutoPatch path</span>
+    <h2 class="rv">From a pile of code to a verified fix.</h2>
+    <p class="lead rv">Scroll through the four steps.</p>
+    <div class="story">
+      <div class="story-steps" id="steps">
+        <div class="st on" data-i="0"><div class="n">1</div><h3>Upload your repository</h3><p>Drop in a ZIP. It is checked, indexed and stored untouched. Nothing runs at upload time.</p></div>
+        <div class="st" data-i="1"><div class="n">2</div><h3>Detect software bugs</h3><p>AutoPatch runs your tests, Ruff, Bandit and entry points in a temporary copy, with time limits.</p></div>
+        <div class="st" data-i="2"><div class="n">3</div><h3>Repair with AI</h3><p>Pick a bug and ask for a fix. You see an explanation and the exact change, and nothing is applied until you approve.</p></div>
+        <div class="st" data-i="3"><div class="n">4</div><h3>Verify, then decide</h3><p>Your tests run before and after the patch. You see real counts, and you can roll back at any time.</p></div>
+      </div>
+      <div class="story-visual" aria-hidden="true">
+        <div class="panelv on" data-i="0"><h4>Upload</h4><div class="dropz">project.zip &rarr; checked for unsafe paths, symlinks and size</div>
+          <div class="tree"><div>&#128193; shop/</div><div>&nbsp;&nbsp;&#9500; cart.py</div><div>&nbsp;&nbsp;&#9500; pricing.py</div><div>&nbsp;&nbsp;&#9492; tests/test_cart.py</div><div style="color:#4ADE80">&#10003; original kept unchanged</div></div></div>
+        <div class="panelv" data-i="1"><h4>Detect</h4>
+          <div class="chk"><span class="tick">&#10003;</span><span>pytest baseline</span><small>your tests</small></div>
+          <div class="chk"><span class="tick">&#10003;</span><span>Ruff static analysis</span><small>static</small></div>
+          <div class="chk"><span class="tick">&#10003;</span><span>Bandit security scan</span><small>static</small></div>
+          <div class="chk"><span class="spin"></span><span>Run entry points once</span><small>runtime</small></div></div>
+        <div class="panelv" data-i="2"><h4>Repair</h4>
+          <div class="diff"><div class="del">-    return total / len(values)</div><div class="add">+    return total / len(values) if values else 0</div></div>
+          <div class="kv"><b>Example of the idea.</b> Real proposals come from your own bug and code, and are validated before you see them.</div>
+          <div class="btns"><span>Approve</span><span>Reject</span></div></div>
+        <div class="panelv" data-i="3"><h4>Verify</h4>
+          <div class="gate"><span>Re-run your tests</span><span>Compare with baseline</span><span>Revert on regression</span></div>
+          <div class="kv" style="margin-top:1rem">Results are reported as counts, for example &ldquo;Verified against the available tests&rdquo; with passed and failed numbers. If no test covers the bug, AutoPatch says so.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lsec" id="why">
+  <div class="wrap"><span class="eyebrow rv">Why AutoPatch</span><h2 class="rv">Built to be trusted, not just fast.</h2>
+    <div class="why">
+      <div class="rv"><div class="wline"></div><h3>Honest about certainty</h3><p>A bug seen at runtime is never mixed up with a code smell. Static findings say so plainly.</p></div>
+      <div class="rv d1"><div class="wline"></div><h3>Evidence first</h3><p>You see the traceback and the code, not just a verdict.</p></div>
+      <div class="rv d2"><div class="wline"></div><h3>You stay in control</h3><p>Fixes wait for your approval, are applied to a separate copy, and can be rolled back.</p></div>
+      <div class="rv d3"><div class="wline"></div><h3>Runs on your machine</h3><p>Local, restricted execution with time limits. It is a prototype and not a hardened sandbox, so scan code you trust.</p></div>
+    </div></div>
+</section>
+
+<section class="cta"><div class="wrap">
+  <svg class="botmini" viewBox="0 0 120 124" aria-hidden="true"><use href="#patchy"/></svg>
+  <h2 class="rv">Ready to see what is hiding in your code?</h2>
+  <a class="btn primary big" href="/app">Get Started &rarr;</a>
+</div></section>
+</main>
+<footer class="lfoot"><div class="wrap">AutoPatch &middot; INNOVEDGE Hackathon 2026</div></footer>
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+{% endblock %}

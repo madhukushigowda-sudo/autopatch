@@ -1,0 +1,18 @@
+{% extends "workspace.html" %}
+{% block title %}Bug Intelligence · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Bug Intelligence</h1>{% endblock %}
+{% block content %}
+<p class="note" id="basis">Loading…</p>
+<div class="tiles" id="tiles"></div>
+<section class="card">
+  <div class="filters" id="filters">
+    <input type="search" id="q" placeholder="Search title, file, rule, repository…" aria-label="Search bugs">
+    <select id="f-project" aria-label="Repository"></select>
+    <select id="f-severity" aria-label="Severity"></select>
+    <select id="f-category" aria-label="Category"></select>
+    <select id="f-conf" aria-label="Evidence"></select>
+  </div>
+  <div id="list"><div class="skel"></div><div class="skel" style="width:80%"></div></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/issues.js') }}"></script>{% endblock %}

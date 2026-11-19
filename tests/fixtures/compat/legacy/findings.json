@@ -1,0 +1,66 @@
+{
+ "174ce2bfb1a64a43873f8c3cd129e5da": {
+  "_id": "174ce2bfb1a64a43873f8c3cd129e5da",
+  "category": "test_failure",
+  "category_label": "Test failure",
+  "confidence": "Medium",
+  "confirmation": "runtime",
+  "confirmation_label": "Confirmed at runtime",
+  "created_at": "2026-11-19T10:50:45+00:00",
+  "description": "test_util.py::test_add failed: assert -1 == 3",
+  "detection_method": "pytest execution (runtime)",
+  "evidence": {
+   "captured": [],
+   "code_under_test": {
+    "file": "util.py",
+    "function": "add",
+    "line": 1
+   },
+   "exception": {
+    "message": "assert -1 == 3\n +  where -1 = add(1, 2)",
+    "type": "AssertionError"
+   },
+   "nodeid": "test_util.py::test_add",
+   "snippet": {
+    "line": 1,
+    "lines": [
+     "def add(a, b):",
+     "    return a - b"
+    ],
+    "start": 1
+   },
+   "statement": "assert add(1, 2) == 3",
+   "summary": "pytest observed AssertionError in test_util.py::test_add.",
+   "traceback": [
+    {
+     "lineno": 4,
+     "lines": [
+      "    assert add(1, 2) == 3",
+      "E   assert -1 == 3",
+      "E    +  where -1 = add(1, 2)"
+     ],
+     "path": "test_util.py"
+    }
+   ],
+   "traceback_text": "test_util.py:4: in test_add\n    assert add(1, 2) == 3\nE   assert -1 == 3\nE    +  where -1 = add(1, 2)",
+   "type": "runtime"
+  },
+  "file": "util.py",
+  "finding_id": "f51014-F001",
+  "function": "add",
+  "line": 1,
+  "occurrences": 1,
+  "project_id": "497323b7d96e4bb0b0bd13cdf6064aa8",
+  "project_name": "proj",
+  "related": [],
+  "root_cause": "The test's assertion does not hold (assert -1 == 3). Either the implementation returns a wrong result for this input or the test's expectation is wrong; AutoPatch cannot tell which from the failure alone. The failing statement calls `add` (util.py:1), the most likely code under test (heuristic: its name appears in the statement).",
+  "rule": "AssertionError",
+  "run_id": "f510144ff61040c8b8d37c201749834b",
+  "severity": "High",
+  "tests": [
+   "test_util.py::test_add"
+  ],
+  "title": "Test failure: test_add",
+  "trigger": "Running `pytest test_util.py::test_add`. The failing statement is `assert add(1, 2) == 3`."
+ }
+}

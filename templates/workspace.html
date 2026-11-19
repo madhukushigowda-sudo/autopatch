@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body_class %}ws{% endblock %}
+{% macro nav(key, href, label, icon) %}<a href="{{ href }}" class="{{ 'active' if active == key }}"{% if active == key %} aria-current="page"{% endif %}><svg viewBox="0 0 24 24" aria-hidden="true">{{ icon|safe }}</svg>{{ label }}</a>{% endmacro %}
+{% block body %}
+<a class="skip" href="#main">Skip to content</a>
+<aside class="side">
+  <a class="brand" href="/"><span class="logo">A</span>AutoPatch</a>
+  <nav aria-label="Main">
+    {{ nav('dashboard', '/app', 'Dashboard', '<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>') }}
+    {{ nav('repositories', '/app/repositories', 'Repositories', '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>') }}
+    {{ nav('scan', '/app/scan', 'Scan Center', '<circle cx="12" cy="12" r="9"/><path d="M12 12l5-5"/><circle cx="12" cy="12" r="1.5"/>') }}
+    {{ nav('issues', '/app/issues', 'Bug Intelligence', '<path d="M12 8v5M12 17h.01"/><path d="M10.3 3.9L2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>') }}
+    {{ nav('studio', '/app/studio', 'AI Repair Studio', '<path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2.3-.7-.7-2.3z"/>') }}
+    {{ nav('verification', '/app/verification', 'Verification', '<path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/>') }}
+    {{ nav('reports', '/app/reports', 'Reports', '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>') }}
+  </nav>
+  <div class="side-foot"><span class="chip" id="storage-chip">storage: checking…</span><span>Hackathon build · local</span></div>
+</aside>
+<main class="main" id="main">
+  <header class="topbar">{% block crumbs %}{% endblock %}</header>
+  <div class="content">{% block content %}{% endblock %}</div>
+</main>
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+{% block scripts %}{% endblock %}
+{% endblock %}

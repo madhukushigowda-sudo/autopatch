@@ -1,0 +1,7 @@
+{% extends "workspace.html" %}
+{% block title %}Reports · AutoPatch{% endblock %}
+{% block crumbs %}<h1>Reports</h1><div class="chips noprint"><select id="repo" aria-label="Repository"></select><a class="btn primary" id="dl" href="#" aria-disabled="true">Download Markdown</a><button class="btn" id="print" type="button">Print</button></div>{% endblock %}
+{% block content %}
+<div id="report"><div class="empty"><div class="big">Select a repository</div>Reports are generated from stored scan and repair records.</div></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/reports.js') }}"></script>{% endblock %}

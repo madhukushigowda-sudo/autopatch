@@ -1,0 +1,7 @@
+{% extends "workspace.html" %}
+{% block title %}Repair · AutoPatch{% endblock %}
+{% block crumbs %}<div><div class="crumb muted small" id="crumb"></div><h1 id="title">Repair Studio</h1></div><div class="chips"><a class="btn" id="intel" href="/app/issues">Bug details</a><a class="btn" href="/app/studio">All bugs</a></div>{% endblock %}
+{% block content %}
+<div id="root" data-finding-id="{{ finding_id }}"><div class="skel"></div></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/patches.js') }}"></script><script src="{{ url_for('static', filename='js/studio_finding.js') }}"></script>{% endblock %}

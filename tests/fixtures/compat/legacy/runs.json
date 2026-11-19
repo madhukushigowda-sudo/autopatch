@@ -1,0 +1,165 @@
+{
+ "f510144ff61040c8b8d37c201749834b": {
+  "_id": "f510144ff61040c8b8d37c201749834b",
+  "created_at": "2026-11-19T10:50:45+00:00",
+  "current_stage": null,
+  "duration_s": 0.36,
+  "error": null,
+  "execution_note": "Restricted local prototype, not a hardened sandbox: the project's tests and entry points were executed in a child process on this machine, in a temporary copy, with a timeout and without the server's secrets.",
+  "findings_summary": {
+   "by_category": {
+    "test_failure": 1
+   },
+   "by_confirmation": {
+    "runtime": 1,
+    "static": 0
+   },
+   "by_severity": {
+    "Critical": 0,
+    "High": 1,
+    "Low": 0,
+    "Medium": 0
+   },
+   "total": 1
+  },
+  "finished_at": "2026-11-19T10:50:45+00:00",
+  "integrity": {
+   "digest_after": "d04b12d6885a193eb2fc0c18824eccc9e4e11782a2ba50463985acb49228695f",
+   "digest_before": "d04b12d6885a193eb2fc0c18824eccc9e4e11782a2ba50463985acb49228695f",
+   "original_unchanged": true,
+   "workspace_removed": true
+  },
+  "options": {
+   "run_entrypoints": false,
+   "run_security": true,
+   "run_static": true,
+   "run_tests": true
+  },
+  "project_id": "497323b7d96e4bb0b0bd13cdf6064aa8",
+  "project_name": "proj",
+  "stages": [
+   {
+    "detail": "Copied 2 file(s) to a temporary working folder",
+    "duration_s": 0.0,
+    "id": "prepare",
+    "label": "Prepare isolated copy",
+    "status": "done"
+   },
+   {
+    "detail": "0 file(s) with syntax/decoding errors",
+    "duration_s": 0.0,
+    "id": "structure",
+    "label": "Parse project structure",
+    "status": "done"
+   },
+   {
+    "detail": "1 passed, 1 failed, 0 error(s), 0 skipped",
+    "duration_s": 0.32,
+    "id": "tests",
+    "label": "Run pytest tests",
+    "status": "done"
+   },
+   {
+    "detail": "Ruff: ok (0 item(s)); AST patterns: 0",
+    "duration_s": 0.02,
+    "id": "static",
+    "label": "Static analysis (Ruff + AST patterns)",
+    "status": "done"
+   },
+   {
+    "detail": "Bandit: unavailable",
+    "duration_s": 0.0,
+    "id": "security",
+    "label": "Security scan (Bandit)",
+    "status": "done"
+   },
+   {
+    "detail": "Disabled for this run",
+    "duration_s": 0,
+    "id": "entrypoints",
+    "label": "Run entry points",
+    "status": "skipped"
+   },
+   {
+    "detail": "1 finding(s)",
+    "duration_s": 0.0,
+    "id": "findings",
+    "label": "Build findings",
+    "status": "done"
+   },
+   {
+    "detail": "Temporary working folder removed",
+    "duration_s": 0.0,
+    "id": "cleanup",
+    "label": "Clean up",
+    "status": "done"
+   }
+  ],
+  "started_at": "2026-11-19T10:50:45+00:00",
+  "status": "completed",
+  "summary": {
+   "ast_patterns": {
+    "count": 0,
+    "status": "ok"
+   },
+   "bandit": {
+    "count": 0,
+    "duration_s": 0.0,
+    "error": "Bandit is not installed (pip install bandit); security scan skipped.",
+    "status": "unavailable",
+    "tool": "bandit",
+    "version": null
+   },
+   "entrypoints": [],
+   "findings_truncated": 0,
+   "pytest": {
+    "command": "python -m pytest --tb=short -q (addopts overridden; rootdir = project copy)",
+    "duration_s": 0.318,
+    "exit_code": 1,
+    "hung_tests": [],
+    "note": null,
+    "output_truncated": false,
+    "status": "failed",
+    "stderr_tail": "",
+    "stdout_tail": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n___________________________________ test_add ___________________________________\ntest_util.py:4: in test_add\n    assert add(1, 2) == 3\nE   assert -1 == 3\nE    +  where -1 = add(1, 2)\n=========================== short test summary info ============================\nFAILED test_util.py::test_add - assert -1 == 3\n1 failed, 1 passed in 0.01s\n",
+    "summary": {
+     "collected": 2,
+     "collection_errors": 0,
+     "errors": 0,
+     "failed": 1,
+     "incomplete": 0,
+     "passed": 1,
+     "skipped": 0,
+     "total": 2,
+     "xfailed": 0,
+     "xpassed": 0
+    },
+    "tests": [
+     {
+      "duration": 0.0005,
+      "file": "test_util.py",
+      "message": "AssertionError: assert -1 == 3",
+      "nodeid": "test_util.py::test_add",
+      "outcome": "failed"
+     },
+     {
+      "duration": 0.0003,
+      "file": "test_util.py",
+      "nodeid": "test_util.py::test_other",
+      "outcome": "passed"
+     }
+    ],
+    "timed_out": false
+   },
+   "ruff": {
+    "count": 0,
+    "duration_s": 0.008,
+    "error": null,
+    "status": "ok",
+    "tool": "ruff",
+    "version": "ruff 0.16.9"
+   }
+  },
+  "warnings": []
+ }
+}

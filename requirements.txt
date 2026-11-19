@@ -1,0 +1,10 @@
+# AutoPatch dependencies (Stage 3).
+Flask>=3.0
+python-dotenv>=1.0
+pymongo[srv]>=4.6
+networkx>=3.2
+pytest>=8.0
+ruff>=0.5
+bandit>=1.7
+# Optional: the official Google Gen AI SDK. Without it (or if Windows blocks it) AutoPatch calls the Gemini REST API itself.
+# google-genai>=1.0
